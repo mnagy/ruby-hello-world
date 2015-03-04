@@ -6,8 +6,9 @@ def self.connect_to_database_prod
       :adapter  => "mysql2",
       :host     => "#{ENV["DATABASE_SERVICE_HOST"]}",
       :port     => "#{ENV["DATABASE_SERVICE_PORT"]}",
-      :database => "#{ENV["MYSQL_DATABASE"]}",
-      :password => "#{ENV["MYSQL_ROOT_PASSWORD"]}"
+      :user     => "#{ENV["MYSQL_USER"]}",
+      :password => "#{ENV["MYSQL_PASSWORD"]}",
+      :database => "#{ENV["MYSQL_DATABASE"]}"
     )
 
     ActiveRecord::Base.connection.active?
@@ -23,8 +24,9 @@ def self.connect_to_database_test
       :adapter  => "mysql2",
       :host     => "#{ENV["DATABASE_TEST_SERVICE_HOST"]}",
       :port     => "#{ENV["DATABASE_TEST_SERVICE_PORT"]}",
-      :database => "#{ENV["MYSQL_DATABASE"]}",
-      :password => "#{ENV["MYSQL_ROOT_PASSWORD"]}"
+      :user     => "#{ENV["MYSQL_USER"]}",
+      :password => "#{ENV["MYSQL_PASSWORD"]}",
+      :database => "#{ENV["MYSQL_DATABASE"]}"
     )
 
     ActiveRecord::Base.connection.active?
