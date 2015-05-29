@@ -3,10 +3,11 @@ require 'sinatra/activerecord'
 def self.connect_to_database_prod
   begin
     config = {
-      :adapter  => "mysql2",
-      :host     => "#{ENV["DATABASE_SERVICE_HOST"]}",
-      :port     => "#{ENV["DATABASE_SERVICE_PORT"]}",
-      :database => "#{ENV["MYSQL_DATABASE"]}"
+      :adapter   => "mysql2",
+      :host      => "#{ENV["DATABASE_SERVICE_HOST"]}",
+      :port      => "#{ENV["DATABASE_SERVICE_PORT"]}",
+      :database  => "#{ENV["MYSQL_DATABASE"]}",
+      :reconnect => true
     }
     if ENV.key?("MYSQL_ROOT_PASSWORD")
       config[:password] = "#{ENV["MYSQL_ROOT_PASSWORD"]}"

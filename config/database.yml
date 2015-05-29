@@ -8,6 +8,7 @@ development:
   password: <%= password %>
   host: <%= ENV["DATABASE_SERVICE_HOST"] %>
   port: <%= ENV["DATABASE_SERVICE_PORT"] %>
+  reconnect: true
 
 test:
   adapter: mysql2
@@ -16,6 +17,7 @@ test:
   password: <%= password %>
   host: <%= ENV["DATABASE_TEST_SERVICE_HOST"] %>
   port: <%= ENV["DATABASE_TEST_SERVICE_PORT"] %>
+  reconnect: true
 
 production:
   adapter: mysql2
@@ -24,3 +26,4 @@ production:
   password: <%= password %>
   host: <%= ENV["DATABASE_SERVICE_HOST"] %>
   port: <%= ENV["DATABASE_SERVICE_PORT"] %>
+  reconnect: true
